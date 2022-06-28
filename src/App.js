@@ -6,7 +6,7 @@ import MovieCard from './movie.jsx';
 import CircularProgress from '@mui/material/CircularProgress';
 import Pagination from "./pagination";
 //e21b8e79
-
+//https://api.themoviedb.org/3/search/movie?api_key=0c67b96606a1f9095e44781655ac394f&language=en-US&query=batman&page=1&include_adult=false
 const API_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=e21b8e79';
 
 function App(){
@@ -21,17 +21,17 @@ function App(){
   const currentCards = movies.slice(indexOfFirstCard, indexOfLastCard)
   
   const paginate = (pageNumber) => {setCurrentPage(pageNumber)}
-
+  
 
   const searchMovies = async (title) => {
     setLoading(true)
-    const response = await fetch(`${API_URL}&s=${title}`,{
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=0c67b96606a1f9095e44781655ac394f&language=en-US&query=${title}&page=1&include_adult=false`,{
       method : 'GET',
       mode : 'cors',
     });
     const data = await response.json()
+    setMovies(data.results)
     setLoading(false)
-    setMovies(data.Search)
   };
 
   useEffect(()=>{
