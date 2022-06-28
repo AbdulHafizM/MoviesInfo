@@ -40,7 +40,7 @@ function App(){
 
   return(
     <div className="app">
-      <h1>MOVIE INFO</h1>
+      <h1>MOVIES INFO</h1>
       <div className="search">
         <input placeholder="Search for movies" value={value} onChange={(e) => {
            setValue(e.target.value);
