@@ -2,7 +2,7 @@ import React from 'react';
 
 const MovieCard = ({movie}) => {
     return (
-        <div  className="movie">
+        <div className="movie">
             <div>
                 <p>{movie.release_date}</p>
             </div>
@@ -12,6 +12,12 @@ const MovieCard = ({movie}) => {
             <div>
                 <span>{`Popularity : ${movie.popularity}`}</span>
                 <p>{movie.title}</p>
+            </div>
+            <div className="pop_overview">
+                <span>Overview</span>
+                <p>
+                    {movie.overview}
+                </p>
             </div>
       </div>
     )
